@@ -1,21 +1,18 @@
-#importation module
 import discord
 import time
 
 from discord.ext import commands
 
-#créer le bot
-bot = commands.Bot(command_prefix='$')
 
-#détecter quand bor est pret
+bot = commands.Bot(command_prefix='!')
+
 @bot.event
 async def on_ready():
-    print("bot prêt")
-    await bot.change_presence(status= discord.Status.idle, activity=discord.Game("Prêt à barker"))
+#    print("Ready")
+    await bot.change_presence(status= discord.Status.online, activity=discord.Game("Prêt à barker"))
   
 
 
-#cmd bienvenue
 @bot.command()
 async def bark_on(ctx, member : discord.Member):
     pseudo = member.mention
@@ -44,7 +41,6 @@ async def bark_on(ctx, member : discord.Member):
 
 
 
-#vérifier erreur
 @bark_on.error
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
@@ -53,14 +49,9 @@ async def on_command_error(ctx, error):
 
 
 
-
-
-
-
-#donner le jeton pour connection
-jeton = ""
+token = "EnterYourTokenHere"
 
 #connection serveur
-bot.run(jeton)
+bot.run(token)
 
 
