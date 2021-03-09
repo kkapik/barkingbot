@@ -58,7 +58,7 @@ async def on_command_error(ctx, error):
 
 
 #donner le jeton pour connection
-jeton = "ODA3OTExNDAwNTMzMzkzNDQ5.YB-4IA.fv8hQZbCKp6Q2eQ3lv6P0c0_m_A"
+jeton = ""
 
 #connection serveur
 bot.run(jeton)
