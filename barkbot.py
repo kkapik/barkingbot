@@ -1,5 +1,6 @@
 import discord
 import time
+#import keep_alive from keep_alive
 
 from discord.ext import commands
 
@@ -51,7 +52,7 @@ async def on_command_error(ctx, error):
 
 token = "EnterYourTokenHere"
 
-#connection serveur
+#keep_alive()
 bot.run(token)
 
 
